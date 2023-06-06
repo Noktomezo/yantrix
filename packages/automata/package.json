@@ -14,7 +14,7 @@
 	"types": "./dist/index.d.ts",
 	"exports": {
 		"types": "./dist/index.d.ts",
-		"default": "./dist/index.js",
+		"default": "./dist/index.js"
 	},
 	"directories": {
 		"lib": "src",
@@ -33,8 +33,7 @@
 		"build": "tsc",
 		"lint": "prettier --check . && cross-env TIMING=1 eslint src __tests__ --ext .mjs,.js,.ts --format=pretty",
 		"format": "prettier --write . && cross-env TIMING=1 eslint src __tests__ --ext .mjs,.js,.ts --fix --format=pretty",
-		"prepack": "npm run lint && npm run build",
-		"prepare": "npm run build"
+		"prepack": "npm run lint && npm run build"
 	},
 	"bugs": {
 		"url": "https://github.com/octaharon/yantrix/issues"
