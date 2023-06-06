@@ -10,6 +10,10 @@
 		"build:affected": "lerna run build --since=origin/main",
 		"test": "lerna run test",
 		"test:affected": "lerna run test --since=origin/main",
+		"lint": "lerna run lint",
+		"lint:affected": "lerna run lint --since=origin/main",
+		"format": "lerna run format",
+		"format:affected": "lerna run format --since=origin/main",
 		"prepare": "is-ci || husky install"
 	},
 	"repository": {
