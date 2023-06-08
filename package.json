@@ -1,5 +1,5 @@
 {
-	"name": "yantrix",
+	"name": "@yantrix/monorepo",
 	"private": true,
 	"version": "0.0.1",
 	"description": "Event-Driven FSM Framework",
