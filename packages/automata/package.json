@@ -31,9 +31,9 @@
 	"scripts": {
 		"test": "vitest run",
 		"build": "tsc",
-		"lint": "prettier --check . && cross-env TIMING=1 eslint src __tests__ --ext .mjs,.js,.ts --format=pretty",
-		"format": "prettier --write . && cross-env TIMING=1 eslint src __tests__ --ext .mjs,.js,.ts --fix --format=pretty",
-		"prepack": "npm run lint && npm run build"
+		"lint": "cross-env TIMING=1 eslint src --ext .mjs,.js,.ts --format=pretty",
+		"format": "prettier --write .",
+		"prepack": "yarn lint && yarn test && yarn build"
 	},
 	"bugs": {
 		"url": "https://github.com/octaharon/yantrix/issues"

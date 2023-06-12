@@ -8,13 +8,16 @@
 		"clean": "lerna exec rimraf dist coverage",
 		"build": "lerna run build",
 		"build:affected": "lerna run build --since=origin/main",
+		"build:clean": "yarn clean && yarn build",
 		"test": "lerna run test",
 		"test:affected": "lerna run test --since=origin/main",
 		"lint": "lerna run lint",
 		"lint:affected": "lerna run lint --since=origin/main",
 		"format": "lerna run format",
 		"format:affected": "lerna run format --since=origin/main",
-		"prepare": "is-ci || husky install"
+		"yalc:all": "lerna exec -- yalc push --replace",
+		"publish:local": "yarn build:clean && yarn yalc:all",
+		"postinstall": "is-ci || husky install"
 	},
 	"repository": {
 		"type": "git",
@@ -35,6 +38,9 @@
 		"url": "https://github.com/octaharon/yantrix/issues"
 	},
 	"homepage": "https://github.com/octaharon/yantrix#readme",
+	"peerDependencies": {
+		"yalc": "^1.0.0"
+	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.6.3",
 		"@commitlint/config-conventional": "^17.6.3",
@@ -56,5 +62,6 @@
 	},
 	"workspaces": [
 		"packages/*"
-	]
+	],
+	"packageManager": "yarn@3.5.1"
 }
